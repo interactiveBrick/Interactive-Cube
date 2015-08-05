@@ -17,6 +17,7 @@
 #X obj 426 365 outlet;
 #X obj 200 177 OSCroute /freq;
 #X obj 200 202 modules/interp;
+#X floatatom 352 161 5 0 0 0 - - -;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 5 0;
@@ -41,4 +42,5 @@
 #X connect 13 1 15 0;
 #X connect 14 0 13 0;
 #X connect 16 0 17 0;
+#X connect 16 0 18 0;
 #X connect 17 0 9 0;
