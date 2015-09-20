@@ -1,14 +1,30 @@
-Interactive Cube Software
-=========================
+DIY Interactive Cube
+====================
 
 "Your mileage may vary..."
+
+
+
+Prerequisites
+-------------
+
+* Get and build one of these [Adafruit RGB Matrix Hat](https://www.adafruit.com/products/2345)
+
+* Laser cut some 6mm acrylic using the template in `hardware` folder
+
+* Order a few 32x32 HUB75 led panels with 4mm pixel pitch from Alibaba
+
+* Get some M3 screws and nuts from your favorite hardware shop
+
+* Get a raspberry pi with raspbian on.
+
+* Get a powerful power supply.
 
 
 
 On Raspberry PI
 ---------------
 
-* Get and build one of these [Adafruit RGB Matrix Hat](https://www.adafruit.com/products/2345)
 
 * Set a static IP of 192.168.1.150
 
