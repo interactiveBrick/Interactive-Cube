@@ -1,9 +1,0 @@
-#N canvas 0 22 450 300 10;
-#X obj -46 17 udpreceive 9997;
-#X obj -46 44 unpackOSC;
-#X obj -46 71 pipelist;
-#X obj -46 101 outlet;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 1 2 1;
-#X connect 2 0 3 0;

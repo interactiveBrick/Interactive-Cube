@@ -1,0 +1,26 @@
+#N canvas 520 23 340 332 10;
+#X declare -path samples;
+#X declare -path abstractions;
+#X declare -path /Applications/Pd-extended.app/Contents/Resources/extra/osc
+;
+#X declare -path /Applications/Pd-extended.app/Contents/Resources/extra/net
+;
+#X obj 6 261 dac~ 1 2;
+#N canvas 332 148 450 300 init 0;
+#X obj 21 154 declare -path samples;
+#X obj 21 124 declare -path abstractions;
+#X obj 24 71 declare -path /Applications/Pd-extended.app/Contents/Resources/extra/osc
+;
+#X obj 24 21 declare -path /Applications/Pd-extended.app/Contents/Resources/extra/net
+;
+#X restore 120 7 pd init;
+#X obj 104 168 OSC-sender;
+#X obj 6 8 OSC-receiver;
+#X obj 6 34 drum;
+#X obj 8 174 pitch_shifter~;
+#X connect 3 0 4 0;
+#X connect 3 1 5 1;
+#X connect 4 0 5 0;
+#X connect 4 2 2 0;
+#X connect 5 0 0 0;
+#X connect 5 0 0 1;
