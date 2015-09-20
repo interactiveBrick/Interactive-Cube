@@ -20,3 +20,4 @@ Interactive Cube is a project founded by the [Music Bricks](http://musictechfest
 
 - [Presentation](https://youtu.be/8a17_66Da7w?t=6h37m59s)
 - [Awards](https://youtu.be/HwC11hLbe0E?t=2h28m43s)
+- [DIY](https://github.com/interactiveBrick/Interactive-Brick/blob/master/Interactive-cube/README.md)
