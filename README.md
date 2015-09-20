@@ -1,10 +1,22 @@
-CubeSphere is a project born for the #MTFScandi #Hackathon. It is an interactive cube display for manipulating audio. 
+Interactive Cube is a project, by [Balandino Di Donato](http://www.balandinodidonato.com) and Per-Olov Jernberg, which was born during the [MTFScandi](http://musictechfest.net/category/umea/) [Hackathon](http://musictechfest.net/mtfhacks/).
 
-The cube is composed by 5 led displays which show the projection of a sphere on each side of the cube. 
+![](http://www.balandinodidonato.com/wp-content/uploads/2015/06/Screen-Shot-2015-06-01-at-02.51.43.png)
 
-The position of the sphere within the cube depends on the position of the cube tracked using the [Riot device](http://ismm.ircam.fr/devices/). 
+Interactive Brick is a cube composed by 5 touch screens and the [R-IoT device](http://ismm.ircam.fr/devices/) for manipulating audio through touch and gestures. 
+The last face of the cube is left to hardware features such as usb, video, audio and power plugs.
 
-The cube rotation control the mix of 5 audio loops and audio results define the colour and size of the sphere. Moreover, the movement of the cube drive a stereo panning effect. In addition, the cube has two VU meters which displays the amplitude of the stereo output. 
+![](http://www.balandinodidonato.com/wp-content/uploads/2015/06/Screen-Shot-2015-06-01-at-03.39.15.png)
+
+Originally, Interactive Cube called CubeInSphere, it was composed by 5 LED screens and the R-IoT device. 
+The screens were displaying a sphere, which position was defined by the R-IoT orientation; instead size and colour driven respectively by the outgoing audio spectrum and amplitude.
+Moreover, audio meters were showing the current amplitude of the audio signal.
+The results of the audio manipulation was a mix, which was controlled by the R-IoT sensor, of five pre-loaded audio samples.
+
+[Presentation Video](https://youtu.be/TieoJkK3Mvw)
+
+Today, the Interactive Cube development point at an interactive, open and hackable interactive device, controllable through touch and gesture.
+
+Interactive Cube is a project founded by the [Music Bricks](http://musictechfest.net/musicbricks/).
 
 - [Presentation](https://youtu.be/8a17_66Da7w?t=6h37m59s)
 - [Awards](https://youtu.be/HwC11hLbe0E?t=2h28m43s)
