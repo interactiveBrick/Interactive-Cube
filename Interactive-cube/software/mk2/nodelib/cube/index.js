@@ -20,26 +20,11 @@ Cube.prototype.addListener = function(callback) {
 Cube.prototype._handleMessage = function(msg) {
   var prefix = '/' + this.id;
 
-  // console.log('Cube:_handleMessage', msg);
-
   if (msg[0].substring(0, prefix.length) != prefix)
     return;
 
   this.listeners.forEach(function(x) { x(msg); });
 }
-
-
-/*
-Cube.prototype.sendSetLed = function(cubename, led, on) {
-}
-
-Cube.prototype.sendSetSide = function(cubename, side, byte0, byte1) {
-}
-
-Cube.prototype.sendSetLeds = function(cubename, bytes) {
-
-}
-*/
 
 
 Cube.prototype.queuePopQueue = function() {
@@ -68,14 +53,6 @@ Cube.prototype.connect = function(hostname, port) {
 }
 
 
-/*
-Cube.prototype.setLed = function(led, on) {
-}
-
-Cube.prototype.setSide = function(side, ledarray) {
-}
-*/
-
 Cube.prototype.setLeds = function(leds) {
 
   var bytes = [0,0,0,0, 0,0,0,0, 0,0,0,0];
@@ -102,13 +79,58 @@ Cube.prototype.setLeds = function(leds) {
   }
   console.log('');
 
-  this.queue.push([ '/' + this.id + '/leds',
+  var msg = [ '/' + this.id + '/leds',
     bytes[0], bytes[1], bytes[2], bytes[3],
     bytes[4], bytes[5], bytes[6], bytes[7],
-    bytes[8], bytes[9], bytes[10], bytes[11] ]);
+    bytes[8], bytes[9], bytes[10], bytes[11] ];
+
+  this.queue.push(msg);
+
+  this.io.sockets.emit('display', { leds: leds });
 
   this.queuePopQueue();
 }
+
+Cube.prototype.startDebugWebServer = function(port) {
+  port = port || 3000;
+
+  //
+  // Set up mock UI webserver
+  //
+
+  var _this = this;
+
+  var app = require('express')();
+  var http = require('http').Server(app);
+  this.io = require('socket.io')(http);
+
+  app.get('/', function(req, res) {
+    res.sendfile(__dirname + '/debug.html');
+  });
+
+  this.io.on('connection', function(socket){
+    console.log('a user connected');
+    socket.on('chat message', function(msg){
+      console.log('message: ' + msg);
+    });
+    socket.on('buttondown', function(msg){
+      console.log('buttondown:', msg);
+      _this.manager._emit(['/' + _this.id + '/btn', msg.index, 1]);
+    });
+    socket.on('buttonup', function(msg){
+      console.log('buttonup:', msg);
+      _this.manager._emit(['/' + _this.id + '/btn', msg.index, 0]);
+    });
+    socket.on('disconnect', function(){
+      console.log('user disconnected');
+    });
+  });
+
+  http.listen(port, function() {
+    console.log('listening on *:' + port);
+  });
+}
+
 
 
 
@@ -117,13 +139,17 @@ function CubeManager() {
   this.cubes = [];
 }
 
+CubeManager.prototype._emit = function(msg) {
+  this.listeners.forEach(function(x) { x(msg); });
+}
+
 CubeManager.prototype.listen = function(port) {
   var _this = this;
   var oscServer = new osc.Server(3333, '0.0.0.0');
 
   oscServer.on("message", function (msg, rinfo) {
     // console.log("CubeManager: Got message", msg);
-    _this.listeners.forEach(function(x) { x(msg); });
+    _this.emit(msg);
   });
 }
 

@@ -59,41 +59,9 @@ cube.addListener(function(msg) {
   }
 });
 
+cube.startDebugWebServer(3000);
 
 
-//
-// Set up mock UI webserver
-//
-
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-
-app.get('/', function(req, res){
-  res.sendfile('public/index.html');
-});
-
-io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
-  });
-  socket.on('buttondown', function(msg){
-    console.log('buttondown:', msg);
-    input.buttonDown(msg.index);
-  });
-  socket.on('buttonup', function(msg){
-    console.log('buttonup:', msg);
-    input.buttonUp(msg.index);
-  });
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
-});
-
-http.listen(3000, function(){
-  console.log('listening on *:3000');
-});
 
 
 //
@@ -126,27 +94,14 @@ player.addDestination(new MIDIDestination());
 // Set up OSC display
 //
 
-function OSCDisplay() {}
+function CubeDisplayAdapter() {}
 
-OSCDisplay.prototype.render = function(displayinfo) {
+CubeDisplayAdapter.prototype.render = function(displayinfo) {
   cube.setLeds(displayinfo.leds);
 }
 
-display.addDisplay(new OSCDisplay());
+display.addDisplay(new CubeDisplayAdapter());
 
-
-
-//
-// Set up WS display
-//
-
-function WSDisplay() {}
-
-WSDisplay.prototype.render = function(displayinfo) {
-  io.sockets.emit('display', { changes: displayinfo.changes });
-}
-
-display.addDisplay(new WSDisplay());
 
 
 //

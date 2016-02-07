@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+
+
+      .sides {
+        clear: both;
+      }
+
+      .sides .side {
+        float: left;
+      }
+
+      .cube {
+        width: 200px;
+        height: 200px;
+      }
+
+      .cube table { border: 1px solid #888; }
+      .cube table tr { border: 1px solid #888; }
+      .cube table tr td { width: 40px; height: 40px; margin: 2px; text-align: center; background-color: #eee; color: #aaa;}
+      .cube table tr td.on { background-color: #2c2; color: #fff; }
+
+
+
+
+
+
+
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  </head>
+  <body>
+
+    <div class="sides">
+    </div>
+
+    <form>
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+
+    <script>
+      var socket = io();
+
+      socket.on('display', function(displayinfo) {
+        // console.log('display command', displayinfo);
+        if (displayinfo.leds) {
+          for(var i=0; i<displayinfo.leds.length; i++) {
+            if (displayinfo.leds[i]) {
+              $('#b' + i).addClass('on');
+            } else {
+              $('#b' + i).removeClass('on');
+            }
+          }
+        }
+        if (displayinfo.changes) {
+          displayinfo.changes.forEach(function(ch) {
+            if (ch.on) {
+              $('#b' + ch.led).addClass('on');
+            } else {
+              $('#b' + ch.led).removeClass('on');
+            }
+          });
+        }
+      })
+
+      $('form').submit(function() {
+        console.log('send');
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+      });
+
+      $('.sides').on('mousedown', function(x) {
+        var id = x.originalEvent.srcElement.id
+        console.log('mousedown', x, id);
+        if (id.substring(0, 1) == 'b') {
+          socket.emit('buttondown', { index: ~~id.substring(1) });
+        }
+      });
+
+      $('.sides').on('mouseup', function(x) {
+        var id = x.originalEvent.srcElement.id
+        console.log('mouseup', x, id);
+        if (id.substring(0, 1) == 'b') {
+          socket.emit('buttonup', { index: ~~id.substring(1) });
+        }
+      });
+
+      function createSide(offset, title, subtitle) {
+        console.log('createSide', offset, title, subtitle);
+        var html = '';
+        var side = $('<div />', { class: 'side' });
+        side.append($('<b />').text(title));
+        side.append($('<i />').text(subtitle));
+        var table = $('<table/>');
+        var tr;
+        for(var j=0; j<4; j++) {
+          tr = $('<tr/>');
+          for(var i=0; i<4; i++) {
+            var o = offset + j * 4 + i;
+            tr.append($('<td/>').attr('id','b' + o).text('' + o));
+          }
+          table.append(tr);
+        }
+        side.append($('<div />', { class: 'cube' }).append(table));
+        $('.sides').append(side);
+      }
+
+      $(function() {
+        createSide( 0, '0 Front',  'TL-BR');
+        createSide(16, '1 Left',   'TL-BR');
+        createSide(32, '2 Right',  'TL-BR');
+        createSide(48, '3 Top',    'TL-BR');
+        createSide(64, '4 Bottom', 'TL-BR');
+        createSide(80, '5 Back',   'TL-BR');
+      });
+    </script>
+  </body>
+</html>
