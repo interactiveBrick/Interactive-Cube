@@ -11431,6 +11431,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-2",
@@ -11476,114 +11477,78 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
-													"clipheight" : 29.0,
-													"data" : 													{
-														"clips" : [ 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/4-1.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/4-2.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/4-3.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/4-4.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
- ]
+													"id" : "obj-14",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "signal", "bang" ],
+													"patching_rect" : [ 38.0, 475.0, 49.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"basictuning" : 440,
+														"followglobaltempo" : 0,
+														"formantcorrection" : 0,
+														"mode" : "basic",
+														"originallength" : [ 162.895233, "ticks" ],
+														"originaltempo" : 120.0,
+														"pitchcorrection" : 0,
+														"quality" : "basic",
+														"timestretch" : [ 0 ]
 													}
 ,
-													"id" : "obj-3",
-													"maxclass" : "playlist~",
+													"style" : "",
+													"text" : "sfplay~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-39",
+													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 5,
-													"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-													"patching_rect" : [ 38.0, 354.0, 150.0, 120.0 ],
-													"style" : ""
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 97.0, 426.0, 85.0, 22.0 ],
+													"style" : "",
+													"text" : "prepend open"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-31",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "int" ],
+													"patching_rect" : [ 38.0, 355.0, 78.0, 22.0 ],
+													"style" : "",
+													"text" : "t b i"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-30",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 38.0, 393.0, 50.0, 22.0 ],
+													"style" : "",
+													"text" : "1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-19",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 97.0, 392.0, 49.0, 22.0 ],
+													"style" : "",
+													"text" : "$1.wav"
 												}
 
 											}
@@ -11594,9 +11559,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 288.833344, 193.0, 29.5, 22.0 ],
+													"patching_rect" : [ 288.833344, 193.0, 34.0, 22.0 ],
 													"style" : "",
-													"text" : "+ 1"
+													"text" : "+ 12"
 												}
 
 											}
@@ -12621,7 +12586,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 38.0, 483.0, 96.0, 22.0 ],
+													"patching_rect" : [ 38.0, 510.0, 96.0, 22.0 ],
 													"style" : "",
 													"text" : "send~ ch4-fS"
 												}
@@ -12640,10 +12605,19 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
+													"destination" : [ "obj-31", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-12", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-14", 0 ]
 												}
 
 											}
@@ -12707,6 +12681,15 @@
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-18", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-39", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-19", 0 ]
 												}
 
 											}
@@ -12789,10 +12772,37 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-1", 0 ],
+													"destination" : [ "obj-14", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
-													"source" : [ "obj-3", 0 ]
+													"source" : [ "obj-30", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-19", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-31", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-30", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-31", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-39", 0 ]
 												}
 
 											}
@@ -12978,114 +12988,78 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
-													"clipheight" : 29.0,
-													"data" : 													{
-														"clips" : [ 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/3-1.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/3-2.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/3-3.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/3-4.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
- ]
+													"id" : "obj-14",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "signal", "bang" ],
+													"patching_rect" : [ 39.0, 489.0, 49.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"basictuning" : 440,
+														"followglobaltempo" : 0,
+														"formantcorrection" : 0,
+														"mode" : "basic",
+														"originallength" : [ 162.895233, "ticks" ],
+														"originaltempo" : 120.0,
+														"pitchcorrection" : 0,
+														"quality" : "basic",
+														"timestretch" : [ 0 ]
 													}
 ,
-													"id" : "obj-3",
-													"maxclass" : "playlist~",
+													"style" : "",
+													"text" : "sfplay~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-39",
+													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 5,
-													"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-													"patching_rect" : [ 38.0, 352.0, 150.0, 120.0 ],
-													"style" : ""
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 98.0, 440.0, 85.0, 22.0 ],
+													"style" : "",
+													"text" : "prepend open"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-31",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "int" ],
+													"patching_rect" : [ 39.0, 369.0, 78.0, 22.0 ],
+													"style" : "",
+													"text" : "t b i"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-30",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 39.0, 407.0, 50.0, 22.0 ],
+													"style" : "",
+													"text" : "1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-19",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 98.0, 406.0, 49.0, 22.0 ],
+													"style" : "",
+													"text" : "$1.wav"
 												}
 
 											}
@@ -13095,7 +13069,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 38.0, 491.0, 96.0, 22.0 ],
+													"patching_rect" : [ 39.0, 527.0, 96.0, 22.0 ],
 													"style" : "",
 													"text" : "send~ ch3-fS"
 												}
@@ -13110,7 +13084,7 @@
 													"outlettype" : [ "int" ],
 													"patching_rect" : [ 288.833344, 193.0, 29.5, 22.0 ],
 													"style" : "",
-													"text" : "+ 1"
+													"text" : "+ 8"
 												}
 
 											}
@@ -14142,10 +14116,19 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
+													"destination" : [ "obj-31", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-12", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-14", 0 ]
 												}
 
 											}
@@ -14209,6 +14192,15 @@
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-18", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-39", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-19", 0 ]
 												}
 
 											}
@@ -14291,10 +14283,37 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-1", 0 ],
+													"destination" : [ "obj-14", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
-													"source" : [ "obj-3", 0 ]
+													"source" : [ "obj-30", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-19", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-31", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-30", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-31", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-39", 0 ]
 												}
 
 											}
@@ -14480,114 +14499,78 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
-													"clipheight" : 29.0,
-													"data" : 													{
-														"clips" : [ 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/2-1.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/2-2.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/2-3.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/2-4.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
- ]
+													"id" : "obj-14",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "signal", "bang" ],
+													"patching_rect" : [ 39.0, 489.0, 49.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"basictuning" : 440,
+														"followglobaltempo" : 0,
+														"formantcorrection" : 0,
+														"mode" : "basic",
+														"originallength" : [ 162.895233, "ticks" ],
+														"originaltempo" : 120.0,
+														"pitchcorrection" : 0,
+														"quality" : "basic",
+														"timestretch" : [ 0 ]
 													}
 ,
-													"id" : "obj-11",
-													"maxclass" : "playlist~",
+													"style" : "",
+													"text" : "sfplay~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-39",
+													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 5,
-													"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-													"patching_rect" : [ 38.0, 352.0, 150.0, 120.0 ],
-													"style" : ""
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 98.0, 440.0, 85.0, 22.0 ],
+													"style" : "",
+													"text" : "prepend open"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-31",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "int" ],
+													"patching_rect" : [ 39.0, 369.0, 78.0, 22.0 ],
+													"style" : "",
+													"text" : "t b i"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-30",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 39.0, 407.0, 50.0, 22.0 ],
+													"style" : "",
+													"text" : "1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-19",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 98.0, 406.0, 49.0, 22.0 ],
+													"style" : "",
+													"text" : "$1.wav"
 												}
 
 											}
@@ -14600,7 +14583,7 @@
 													"outlettype" : [ "int" ],
 													"patching_rect" : [ 288.833344, 193.0, 29.5, 22.0 ],
 													"style" : "",
-													"text" : "+ 1"
+													"text" : "+ 4"
 												}
 
 											}
@@ -15625,7 +15608,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 38.0, 481.0, 96.0, 22.0 ],
+													"patching_rect" : [ 39.0, 522.0, 96.0, 22.0 ],
 													"style" : "",
 													"text" : "send~ ch2-fS"
 												}
@@ -15644,19 +15627,19 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-1", 0 ],
+													"destination" : [ "obj-31", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
-													"source" : [ "obj-11", 0 ]
+													"source" : [ "obj-12", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-11", 0 ],
+													"destination" : [ "obj-1", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
-													"source" : [ "obj-12", 0 ]
+													"source" : [ "obj-14", 0 ]
 												}
 
 											}
@@ -15720,6 +15703,15 @@
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-18", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-39", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-19", 0 ]
 												}
 
 											}
@@ -15797,6 +15789,42 @@
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-28", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-30", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-19", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-31", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-30", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-31", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-39", 0 ]
 												}
 
 											}
@@ -16279,114 +16307,78 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
-													"clipheight" : 29.0,
-													"data" : 													{
-														"clips" : [ 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/1-1.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/1-2.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/1-3.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
-, 															{
-																"filename" : "Macintosh HD:/Users/balandinodidonato/git-repositories/cubeSphere/Interactive-cube/MaxPatch/sample/1-4.wav",
-																"filekind" : "audiofile",
-																"loop" : 0,
-																"content_state" : 																{
-																	"followglobaltempo" : [ 0 ],
-																	"pitchshift" : [ 1.0 ],
-																	"pitchcorrection" : [ 0 ],
-																	"pitchshiftcent" : [ 0 ],
-																	"originallengthms" : [ 0.0 ],
-																	"originallength" : [ 0.0, "ticks" ],
-																	"speed" : [ 1.0 ],
-																	"mode" : [ "basic" ],
-																	"formant" : [ 1.0 ],
-																	"slurtime" : [ 0.0 ],
-																	"quality" : [ "basic" ],
-																	"originaltempo" : [ 120.0 ],
-																	"play" : [ 0 ],
-																	"timestretch" : [ 0 ],
-																	"formantcorrection" : [ 0 ],
-																	"basictuning" : [ 440 ]
-																}
-
-															}
- ]
+													"id" : "obj-14",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "signal", "bang" ],
+													"patching_rect" : [ 39.0, 489.0, 49.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"basictuning" : 440,
+														"followglobaltempo" : 0,
+														"formantcorrection" : 0,
+														"mode" : "basic",
+														"originallength" : [ 162.895233, "ticks" ],
+														"originaltempo" : 120.0,
+														"pitchcorrection" : 0,
+														"quality" : "basic",
+														"timestretch" : [ 0 ]
 													}
 ,
-													"id" : "obj-3",
-													"maxclass" : "playlist~",
+													"style" : "",
+													"text" : "sfplay~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-39",
+													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 5,
-													"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-													"patching_rect" : [ 38.0, 350.0, 150.0, 120.0 ],
-													"style" : ""
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 98.0, 440.0, 85.0, 22.0 ],
+													"style" : "",
+													"text" : "prepend open"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-31",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "int" ],
+													"patching_rect" : [ 39.0, 369.0, 78.0, 22.0 ],
+													"style" : "",
+													"text" : "t b i"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-30",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 39.0, 407.0, 50.0, 22.0 ],
+													"style" : "",
+													"text" : "1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-19",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 98.0, 406.0, 49.0, 22.0 ],
+													"style" : "",
+													"text" : "$1.wav"
 												}
 
 											}
@@ -17437,7 +17429,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 38.0, 479.0, 86.0, 22.0 ],
+													"patching_rect" : [ 38.0, 524.0, 86.0, 22.0 ],
 													"style" : "",
 													"text" : "send~ ch1-fS"
 												}
@@ -17456,10 +17448,19 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
+													"destination" : [ "obj-31", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-12", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-14", 0 ]
 												}
 
 											}
@@ -17523,6 +17524,15 @@
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-18", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-39", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-19", 0 ]
 												}
 
 											}
@@ -17614,10 +17624,37 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-1", 0 ],
+													"destination" : [ "obj-14", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
-													"source" : [ "obj-3", 0 ]
+													"source" : [ "obj-30", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-19", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-31", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-30", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-31", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-39", 0 ]
 												}
 
 											}
