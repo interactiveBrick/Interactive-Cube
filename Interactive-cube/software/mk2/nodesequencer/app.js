@@ -47,7 +47,7 @@ var cubemanager = new CubeManager();
 cubemanager.listen(3333);
 
 var cube = cubemanager.getCube('cube18FE');
-cube.connect('192.168.1.41', 3333);
+cube.connect('192.168.0.88', 3333);
 
 cube.addListener(function(msg) {
   if (msg[0] == '/' + cube.id + '/btn') {
@@ -170,12 +170,14 @@ song.tracks[0].patterns[0].steps[4].notes = [ { note: 36, channel: 0 }, { note: 
 song.tracks[0].patterns[0].steps[8].notes = [ { note: 36, channel: 0 } ];
 song.tracks[0].patterns[0].steps[12].notes = [ { note: 36, channel: 0 }, { note: 38, channel: 0 } ];
 
+/*
 song.tracks[0].patterns[0].steps[2].notes = [ { note: 44, channel: 0 } ];
 song.tracks[0].patterns[0].steps[6].notes = [ { note: 44, channel: 0 } ];
 song.tracks[0].patterns[0].steps[10].notes = [ { note: 44, channel: 0 } ];
 song.tracks[0].patterns[0].steps[14].notes = [ { note: 44, channel: 0 } ];
 
-song.tracks[0].patterns[0].steps[13].notes = [ { note: 50, channel: 0 } ];
+song.tracks[0].patterns[0].steps[13].notes = [ { note: 40, channel: 0 } ];
+*/
 
 //
 // Application is running...

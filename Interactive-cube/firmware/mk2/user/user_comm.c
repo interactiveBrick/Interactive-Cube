@@ -454,7 +454,7 @@ void comm_send_acceleration(int16_t ax, int16_t ay, int16_t az) {
 void comm_send_rotation(int16_t rx, int16_t ry, int16_t rz) {
   uint8_t message[36];
 
-  os_printf("send OSC rotation event; rx=%d, ry=%d, rz=%d\n", rx, ry, rz);
+  // os_printf("send OSC rotation event; rx=%d, ry=%d, rz=%d\n", rx, ry, rz);
 
   //
   // 0000   2f 63 75 62 65 31 2f 6c 65 64 73 00 2c 69 69 00  /cube1/leds.,ii.

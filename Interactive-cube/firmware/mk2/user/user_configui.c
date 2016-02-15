@@ -28,7 +28,7 @@
 struct HttpRequestInfo {
   char method[10];
   char url[256];
-  char postbody[1024];
+  char postbody[4096];
 };
 
 enum {
@@ -108,14 +108,14 @@ void postbody_get_value(struct HttpRequestInfo *info, char *key, char *value) {
   int state = POSTBODY_PARSING_KEYNAME;
   char *c = (char *)&info->postbody;
   char *firstchar = c;
-  char keybuffer[30] = { 0, };
-  char valuebuffer[200] = { 0, };
+  char keybuffer[100] = { 0, };
+  char valuebuffer[500] = { 0, };
   int i;
   for(i=0; i<strlen(info->postbody); i++) {
     // os_printf("Parsing postbody char %02X (%c)\n", *c, *c);
 
     if (*c == '=') {
-      memset(keybuffer, 0, 30);
+      memset(keybuffer, 0, 100);
       memcpy(keybuffer, firstchar, (c - firstchar));
 
       os_printf("found postbody key \"%s\"\n", keybuffer);
@@ -124,7 +124,7 @@ void postbody_get_value(struct HttpRequestInfo *info, char *key, char *value) {
       state = POSTBODY_PARSING_KEYNAME;
     } else if (*c == '&') {
 
-      memset(valuebuffer, 0, 200);
+      memset(valuebuffer, 0, 500);
       memcpy(valuebuffer, firstchar, (c - firstchar));
 
       os_printf("found postbody value \"%s\"\n", valuebuffer);
@@ -146,7 +146,7 @@ void postbody_get_value(struct HttpRequestInfo *info, char *key, char *value) {
 
   // end of input, check value.
 
-  memset(valuebuffer, 0, 200);
+  memset(valuebuffer, 0, 500);
   memcpy(valuebuffer, firstchar, (c - firstchar));
 
   os_printf("found postbody value \"%s\"\n", valuebuffer);
@@ -261,9 +261,7 @@ void handle_http_request(struct HttpRequestInfo *req, char **output, int *output
     strcpy(http_response_buffer, configui_html);
 
     replacestr(http_response_buffer, "{ssid}", config_get_ssid());
-
     replacestr(http_response_buffer, "{password}", config_get_password());
-
     replacestr(http_response_buffer, "{cubeid}", config_get_cubeid());
 
     uint8_t *remoteipptr = config_get_remoteip();
@@ -725,7 +723,7 @@ void setup_draw_scroll() {
     }
 
     display_update_inner();
-    os_delay_us(60*1000);
+    os_delay_us(20*1000);
   }
 }
 

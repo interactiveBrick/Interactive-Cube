@@ -115,11 +115,11 @@ Cube.prototype.startDebugWebServer = function(port) {
     });
     socket.on('buttondown', function(msg){
       console.log('buttondown:', msg);
-      _this.manager._emit(['/' + _this.id + '/btn', msg.index, 1]);
+      if (_this.manager) _this.manager._emit(['/' + _this.id + '/btn', msg.index, 1]);
     });
     socket.on('buttonup', function(msg){
       console.log('buttonup:', msg);
-      _this.manager._emit(['/' + _this.id + '/btn', msg.index, 0]);
+      if (_this.manager) _this.manager._emit(['/' + _this.id + '/btn', msg.index, 0]);
     });
     socket.on('disconnect', function(){
       console.log('user disconnected');
@@ -149,7 +149,7 @@ CubeManager.prototype.listen = function(port) {
 
   oscServer.on("message", function (msg, rinfo) {
     // console.log("CubeManager: Got message", msg);
-    _this.emit(msg);
+    _this._emit(msg);
   });
 }
 

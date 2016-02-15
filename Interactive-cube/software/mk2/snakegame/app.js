@@ -8,7 +8,10 @@ var cubemanager = new CubeManager();
 cubemanager.listen(3333);
 
 var cube = cubemanager.getCube('cube18FE');
-cube.connect('192.168.1.41', 3333);
+cube.connect('192.168.0.88', 3333);
+
+// var cube = cubemanager.getCube('cube18FE');
+// cube.connect('192.168.1.41', 3333);
 
 cube.startDebugWebServer(3000);
 
@@ -144,6 +147,7 @@ cube.addListener(function(msg) {
   if (msg[0] == '/' + cube.id + '/btn') {
     if (msg[2] == 1) {
       var n = msg[1];
+      console.log('n', n);
 
       G.tside = (n >> 4);
       G.tx = (n % 16) % 4;
