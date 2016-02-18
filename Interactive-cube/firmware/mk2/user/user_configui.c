@@ -104,6 +104,34 @@ void parse_http_request(char *data, int len, struct HttpRequestInfo *info) {
   os_printf("last postbody: \"%s\"\n", info->postbody);
 }
 
+void postbody_urldecode(char *output, char *input) {
+  char *co = output;
+  char *ci = input;
+  while(*ci != 0) {
+    if (*ci == '%') {
+      ci ++;
+      unsigned char c1 = *ci; ci++;
+      unsigned char c2 = *ci; ci++;
+
+      if (c1 >= '0' && c1 <= '9') c1 = (c1 - '0');
+      if (c1 >= 'a' && c1 <= 'f') c1 = 10 + (c1 - '0');
+      if (c1 >= 'A' && c1 <= 'F') c1 = 10 + (c1 - '0');
+
+      if (c2 >= '0' && c2 <= '9') c2 = (c2 - '0');
+      if (c2 >= 'a' && c2 <= 'f') c2 = 10 + (c2 - 'A');
+      if (c2 >= 'A' && c2 <= 'F') c2 = 10 + (c2 - 'A');
+
+      *co = (c1 * 16) + c2;
+      co ++;
+    } else {
+      *co = *ci;
+      co ++;
+      ci ++;
+    }
+    *co = 0;
+  }
+}
+
 void postbody_get_value(struct HttpRequestInfo *info, char *key, char *value) {
   int state = POSTBODY_PARSING_KEYNAME;
   char *c = (char *)&info->postbody;
@@ -131,6 +159,7 @@ void postbody_get_value(struct HttpRequestInfo *info, char *key, char *value) {
 
       if (strcmp(keybuffer, key) == 0) {
         strcpy(value, valuebuffer); // save value
+        postbody_urldecode(value, valuebuffer);
       }
 
       // check last value if any
@@ -153,6 +182,7 @@ void postbody_get_value(struct HttpRequestInfo *info, char *key, char *value) {
 
   if (strcmp(keybuffer, key) == 0) {
     strcpy(value, valuebuffer); // save value
+    postbody_urldecode(value, valuebuffer);
   }
 }
 
